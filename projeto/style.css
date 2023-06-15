@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --text-color: white;
+    --bg-url: url(./img/bg-mobile.jpg)
+    --stroke-color: rgba(255,255,255, 0.5);
+    --surface-color: rgba()
+}
+
+.light {
+    --text-color: black;
+    --bg-url: url(./img/bg-mobile-light.jpg);
+    --stroke-color: rgba(0,0,0, 0.5);
+}
+
+body {
+    background-image: url(./img/bg-mobile.jpg); /*Here, You are setting the background image, but it will repeat itself throughout the webpage*/ 
+    background-repeat: no-repeat; /*Here, you set the no-repetition of the image, but as it just will appear once, if the image is not big enough it won't fill all the page*/ 
+    background-position: top center; /* Setting the backgroung image's centralization */
+    background-size: cover; /* The backgound imagem will cover all the visible area */
+
+    /* This here down is a more simple sintax to make the same result */
+
+    /* background: url(./img/bg-mobile.jpg) no-repeat top center/cover; */
+}
+
+body {
+    background: var(--bg-url) no-repeat top center/cover;
+}
+
+body * {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+}
+
+#container {
+    width: 360px;
+    margin: 56px auto 0px; /* Define as margens da largura -lados */
+    
+    padding-top: 0 24px;
+
+}
+
+#profile {
+    text-align: center;
+    padding: 24px;
+}
+
+#profile img {
+    width: 112px;
+    /* margin: auto; doesn't work in inline display's elements*/
+    display: block;
+    margin: auto;
+}
+
+#profile p {
+    font-weight: 500; /* the "blackness" of the font */
+    line-height: 24px; /* The height of the line */
+    margin-top: 8px;
+}
+
+/* links */
+
+ul {
+    list-style: none;
+    display: flex; /* allow the elements to be side by side */
+    flex-direction: column;
+    gap: 16px;  /* set a gap between the elements */  
+    
+    padding: 24px 0;
+}
+
+ul li a{
+    border: 1px solid red;
+
+    display: flex;
+    justify-content: center; /* centers the element in relation to the width */
+    align-items: center; /* centers the elements in relation to the height */
+
+    padding: 16px 24px;
+
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--stroke-color);
+    border-radius: 8px; /* round the elemnt border */
+    backdrop-filter: blur(4px);
+
+    text-decoration: none; /* take off the line below the link */
+    font-weight: 500;
+
+    transition: background 0.2s;
+}
+
+ul li a:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1.5px solid var(--text-color);
+}
+
+/* social-links */
+
+#social-links {
+    display: flex; /* The imagem of the icon is already flex displayed, but using this propriety we can use the gap propriety for creating a gap between the elements */
+    justify-content: center;
+
+    padding: 24px 0;
+
+    font-size: 24px;
+}
+
+#social-links a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+
+    transition: background 0.2s;
+    border-radius: 50%;
+}
+
+#social-links a:hover {
+    background:  rgba(255, 255, 255, 0.02);
+    
+}
+
+footer {
+    padding: 24px 0px;
+    text-align: center;
+    font-size: 14px;
+}
+
