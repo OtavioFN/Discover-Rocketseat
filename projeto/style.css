@@ -95,12 +95,16 @@ body * {
     z-index: 1; /* setting the layer */
     left: 0;
     transform: translateY(-50%);
+    animation: switch-slide-out 0.4s;
 
 }
 
 .light #switch button {
-    right: 0;
-    left: initial;
+    animation: switch-slide 0.4s forwards;
+}
+
+#switch button:hover {
+    outline: 8px solid var(--highlight-color);
 }
 
 #switch span {
@@ -188,5 +192,25 @@ footer {
     }
     .light {
         --bg-url: url(./img/bg-desktop-light.jpg)
+    }
+}
+
+/* switch animation */
+
+@keyframes switch-slide{
+    from {
+        left: 0;
+    }
+    to {
+        left: 50%;
+    }
+}
+
+@keyframes switch-slide-out {
+    from {
+        left: 50%;
+    }
+    to {
+        left: 0;
     }
 }
